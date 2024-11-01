@@ -29,31 +29,31 @@ Program ini menghasilkan sejumlah N angka acak yang nilainya selalu kurang dari 
 ## Penjelasan Kode
 
 ### 1. Import Library Random
-python
+```python
 from random import random
-
+```
 Kode ini mengimpor fungsi random() dari library random bawaan Python. Fungsi random() menghasilkan angka acak dalam rentang 0 hingga 1.
 
 ### 2. Input Nilai N
-python
+```python
 n = int(input("Masukkan nilai N: "))
-
+```
 Program meminta pengguna memasukkan nilai integer N, yang menunjukkan berapa kali loop akan dijalankan. Nilai ini menentukan jumlah angka acak yang ingin dihasilkan.
 
 ### 3. Looping dan Generasi Angka Acak
-python
+```python
 for i in range(1, n + 1):
-
+```
 Loop for ini berjalan dari 1 hingga N (inklusif). Pada setiap iterasi, variabel i akan menyimpan indeks iterasi saat ini.
 
 ### 4. Membuat Angka Acak
-python
+```python
 angka_acak = random()
-
+```
 Pada setiap iterasi, sebuah angka acak dihasilkan menggunakan fungsi random() dan disimpan dalam variabel angka_acak.
 
 ### 5. Kondisi Pemilihan
-python
+```python
 Salin kode
 if angka_acak < 0.5:
     print(f"data ke: {i} => {angka_acak}")
@@ -61,20 +61,20 @@ else:
     while angka_acak >= 0.5:
         angka_acak = random()
    print(f"data ke: {i} => {angka_acak}")
-
+```
 Jika angka_acak kurang dari `0.5`, maka angka langsung dicetak dengan `format data ke: {i} => {angka_acak}`.
 Jika angka_acak lebih besar atau sama dengan `0.5`, program akan masuk ke dalam loop while untuk terus menghasilkan angka acak baru hingga mendapatkan angka yang kurang dari `0.5`, lalu mencetak angka tersebut.
 
 ### 6. Akhir Program
-python
+```python
 print("Selesai")
-
+```
 Setelah semua angka yang diinginkan berhasil dihasilkan dan ditampilkan, program mencetak "Selesai" sebagai tanda bahwa proses telah berakhir.
 
 ## Contoh Output
 Jika pengguna memasukkan nilai `N = 5`, maka output yang dihasilkan mungkin terlihat seperti ini:
 
-python
+```python
 Masukkan nilai N: 5
 data ke: 1 => 0.3729648189127943
 data ke: 2 => 0.12069084128885188
@@ -82,9 +82,10 @@ data ke: 3 => 0.12486530658774031
 data ke: 4 => 0.4755389441515395
 data ke: 5 => 0.4919317309126129
 Selesai
-
+```
 
 ## Berikut adalah hasin screenshot vsc
+# ![Screenshot 2024-11-01 083224](https://github.com/user-attachments/assets/7528e138-3d76-41af-832d-6a659543c3e0)
 
 
 
@@ -119,15 +120,15 @@ python3 latihan2.py
 
 ## Penjelasan Kode
 ### 1. Modal Awal dan Variabel Laba
-python
+```python
 modal_awal = 100_000_000
 total_laba = 0
 
    - `modal_awal: menyimpan modal awal pengusaha, yaitu 100 juta rupiah.`
    - `total_laba: akumulasi total laba dari bulan 1 hingga 8, dimulai dari 0.`
-
+```
 ### 2. Lingkaran Perhitungan Laba per Bulan
-python
+```python
 for bulan in range(1, 9):
     if bulan in [1, 2]:        # Bulan 1 dan 2 belum mendapatkan laba
         laba = 0
@@ -141,7 +142,7 @@ for bulan in range(1, 9):
         laba = 0.05 * modal_awal
     elif bulan == 8:           # Bulan 8 mendapatkan laba 3%
         laba = 0.03 * modal_awal
-
+```
 Program menggunakan loop fordari bulan 1 hingga 8. Di setiap iterasi, program menentukan besarnya laba berdasarkan kondisi:
    - Bulan 1 dan 2 : laba 0%.
    - Bulan 3 dan 4 : laba 1% dari modal awal.
@@ -150,7 +151,7 @@ Program menggunakan loop fordari bulan 1 hingga 8. Di setiap iterasi, program me
 
 ### 3. Menambahkan Laba ke Total Laba dan Menampilkan Laba per Bulan
 
-python
+```python
 total_laba += laba
 print(f"laba bulan ke- {bulan} sebesar: {laba}")
 
@@ -160,13 +161,13 @@ Setiap laba bulanan yang dihitung akan ditambahkan ke total_laba. Selain itu, pr
 
 python
 print(f"Total laba adalah: {total_laba}")
-
+```
 Setelah loop selesai, program menampilkan total laba yang diperoleh selama 8 bulan.
 
 ## Contoh Output
 Jika Anda menjalankan program ini, outputnya mungkin akan terlihat seperti berikut:
 
-python
+```python
 laba bulan ke- 1 sebesar: 0
 laba bulan ke- 2 sebesar: 0
 laba bulan ke- 3 sebesar: 1000000.0
@@ -176,8 +177,9 @@ laba bulan ke- 6 sebesar: 5000000.0
 laba bulan ke- 7 sebesar: 5000000.0
 laba bulan ke- 8 sebesar: 3000000.0
 Total laba adalah: 19000000.0
-
+```
 ## Berikut adalah hasin screenshot vsc
+# ![Screenshot 2024-11-01 083322](https://github.com/user-attachments/assets/35e72b02-f8d9-479a-acdf-ce8eb99cfc44)
 
 
 
@@ -210,18 +212,18 @@ Program ini adalah simulasi mesin ATM sederhana yang memungkinkan pengguna untuk
 ## Penjelasan Kode
 
 ### 1. Inisialisasi Saldo
-python
+```python
 saldo = 1000000
-
+```
 Saldo awal pengguna diatur sebesar Rp 1.000.000.
 
 ### 2. Fungsi tampilkan_menu
-python
+```python
 def tampilkan_menu():
     print("\nSaldo saat ini: Rp", saldo)
     print("1. Tarik Uang")
     print("2. Keluar")
-
+```
 Fungsi ini menampilkan saldo pengguna dan dua opsi: Tarik Uang dan Keluar.
 
 ### 3. Loop Utama
@@ -239,7 +241,7 @@ Program menggunakan loop while yang berjalan terus-menerus hingga pengguna memil
 
 ## Contoh Output
 Berikut adalah contoh tampilan saat program berjalan:
-python
+```python
 Saldo saat ini: Rp 1000000
 1. Tarik Uang
 2. Keluar
@@ -258,3 +260,4 @@ Terima kasih telah menggunakan ATM!
    Pengguna kemudian memilih opsi "Keluar" untuk mengakhiri program.
 
 ## Berikut adalah hasin screenshot vsc
+# ![Screenshot 2024-11-01 083506](https://github.com/user-attachments/assets/82bc727d-c1a6-470b-a473-0a2eb7e0ef66)
